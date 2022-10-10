@@ -18,6 +18,24 @@ language and associated toolkit for quantum programming.
 executed on remote devices and simulators via Azure Quantum,
 as well as local simulators and resource estimators from the Microsoft QDK.
 
+## Backends provided in this module
+
+This module provides four
+[backends](https://cqcl.github.io/tket/pytket/api/backends.html), all deriving
+from the `pytket` `Backend` class:
+
+* `AzureBackend`, for executing pytket circuits on targets the user has access to on Azure Quantum;
+
+* `QsharpSimulatorBackend`, for simulating a general pure-quantum circuit using
+the QDK;
+
+* `QsharpToffoliSimulatorBackend`, for simulating a Toffoli circuit using the
+QDK;
+
+* `QsharpEstimatorBackend`, for estimating various quantum resources of a
+circuit using the QDK. This provides a `get_resources` method, which returns a
+dictionary.
+
 ## Getting started
 
 `pytket-qsharp` is available for Python 3.8, 3.9 and 3.10, on Linux, MacOS
