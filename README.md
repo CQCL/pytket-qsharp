@@ -46,6 +46,29 @@ and Windows. To install, run:
 This will install `pytket` if it isn't already installed, and add new classes
 and methods into the `pytket.extensions` namespace.
 
+In order to use `pytket-qsharp` you will first need to install the `dotnet` SDK
+(6.0) and the `iqsharp` tool. On some Linux systems it is also necessary to
+modify your `PATH`:
+
+1. See [this page](https://dotnet.microsoft.com/download/dotnet-core/6.0) for
+instructions on installing the SDK on your operating system.
+
+2. On Linux, ensure that the `dotnet` tools directory is on your path. Typically
+this will be `~/.dotnet/tools`.
+
+3. Run `dotnet tool install -g Microsoft.Quantum.IQSharp`.
+
+4. Run `dotnet iqsharp install --user`.
+
+
+Alternatively, you can set up an environment with all the required packages using conda:
+
+```
+conda create -n qsharp-env -c quantum-engineering qsharp notebook
+
+conda activate qsharp-env
+```
+
 ## Bugs, support and feature requests
 
 Please file bugs and feature requests on the Github
