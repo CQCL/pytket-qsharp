@@ -164,7 +164,9 @@ jobs:
       with:
         path: wheelhouse
     - name: Install pip, wheel
-      run: pip install -U pip wheel
+      run: pip install -U pip wheel jupyterlab
+    - name: Install extensions
+      run: for w in `find wheelhouse/ -type f -name "*.whl"` ; do pip install $w ; done
     - name: Install dotnet SDK
       uses: actions/setup-dotnet@v2
       with:
@@ -173,8 +175,6 @@ jobs:
       run: |
         dotnet tool install -g Microsoft.Quantum.IQSharp
         dotnet iqsharp install --user
-    - name: Install extensions
-      run: for w in `find wheelhouse/ -type f -name "*.whl"` ; do pip install $w ; done
     - name: Install docs dependencies
       run: |
         pip install -r .github/workflows/docs/requirements.txt
