@@ -34,6 +34,8 @@ rm -rf ${ARTIFACTSDIR} && mkdir ${ARTIFACTSDIR}
 
 python -m pip install --upgrade pip wheel build
 
+python -m pip install jupyterlab
+
 if [[ "${PLAT}" != "Darwin" ]]
 then
     dotnet iqsharp install --user
