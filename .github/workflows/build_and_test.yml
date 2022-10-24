@@ -41,7 +41,7 @@ jobs:
 
     - name: Install dotnet SDK - ubuntu
       if: ${{ matrix.os == 'ubuntu-22.04' }}
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '6.0.x'
     - name: Install iqsharp  - ubuntu
@@ -64,7 +64,7 @@ jobs:
 
     - name: Install dotnet SDK  - windows
       if: ${{ matrix.os == 'windows-2022' }}
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '6.0.x'
     - name: Install iqsharp - windows
@@ -171,7 +171,7 @@ jobs:
     - name: Install extensions
       run: for w in `find wheelhouse/ -type f -name "*.whl"` ; do pip install $w ; done
     - name: Install dotnet SDK
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '6.0.x'
     - name: Install iqsharp
