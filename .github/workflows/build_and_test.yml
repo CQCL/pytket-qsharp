@@ -31,7 +31,7 @@ jobs:
     name: Qsharp - Build and test module
     strategy:
       matrix:
-        os: ['ubuntu-20.04', 'macos-12', 'windows-2019']
+        os: ['ubuntu-22.04', 'macos-12', 'windows-2022']
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
@@ -40,12 +40,12 @@ jobs:
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* +refs/heads/*:refs/remotes/origin/*
 
     - name: Install dotnet SDK - ubuntu
-      if: ${{ matrix.os == 'ubuntu-20.04' }}
+      if: ${{ matrix.os == 'ubuntu-22.04' }}
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '6.0.x'
     - name: Install iqsharp  - ubuntu
-      if: ${{ matrix.os == 'ubuntu-20.04' }}
+      if: ${{ matrix.os == 'ubuntu-22.04' }}
       run: |
         dotnet tool install -g Microsoft.Quantum.IQSharp
         dotnet iqsharp install --user
@@ -63,12 +63,12 @@ jobs:
         dotnet iqsharp install
 
     - name: Install dotnet SDK  - windows
-      if: ${{ matrix.os == 'windows-2019' }}
+      if: ${{ matrix.os == 'windows-2022' }}
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: '6.0.x'
     - name: Install iqsharp - windows
-      if: ${{ matrix.os == 'windows-2019' }}
+      if: ${{ matrix.os == 'windows-2022' }}
       run: |
         dotnet tool install -g Microsoft.Quantum.IQSharp
         dotnet iqsharp install --user
@@ -118,11 +118,11 @@ jobs:
         name: artefacts
         path: wheelhouse/
     - name: Install docs dependencies
-      if:  (matrix.os == 'ubuntu-20.04') && (github.event_name == 'pull_request' || github.event_name == 'schedule' )
+      if:  (matrix.os == 'ubuntu-22.04') && (github.event_name == 'pull_request' || github.event_name == 'schedule' )
       run: |
         pip install -r .github/workflows/docs/requirements.txt
     - name: Build docs
-      if:  (matrix.os == 'ubuntu-20.04') && (github.event_name == 'pull_request' || github.event_name == 'schedule' )
+      if:  (matrix.os == 'ubuntu-22.04') && (github.event_name == 'pull_request' || github.event_name == 'schedule' )
       timeout-minutes: 20
       run: |
         ./.github/workflows/docs/check-build-docs
@@ -132,7 +132,7 @@ jobs:
     name: Publish to pypi
     if: github.event_name == 'release'
     needs: qsharp-checks
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Download all wheels
       uses: actions/download-artifact@v3
@@ -153,7 +153,7 @@ jobs:
     name: Build and publish docs
     if: github.event_name == 'release'
     needs: publish_to_pypi
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - uses: actions/checkout@v3
       with:
