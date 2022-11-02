@@ -1,6 +1,12 @@
 Changelog
 ~~~~~~~~~
 
+0.30.0 (November 2022)
+----------------------
+
+* Updated qsharp version requirement to 0.27.
+* Updated pytket version requirement to 1.8.
+
 0.29.0 (October 2022)
 ---------------------
 
