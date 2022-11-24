@@ -68,7 +68,7 @@ def test_postprocess(authenticated_azure_backend: AzureBackend) -> None:
     assert b.supports_counts
     c = Circuit(2, 2)
     c.Rx(0.5, 0).Rx(0.5, 1).CZ(0, 1).X(0).X(1).measure_all()
-    c = b.get_compiled_circuit(c, optimisation_level = 1)
+    c = b.get_compiled_circuit(c, optimisation_level=1)
     h = b.process_circuit(c, n_shots=8, postprocess=True)
     ppcirc = Circuit.from_dict(json.loads(cast(str, h[2])))
     ppcmds = ppcirc.get_commands()
