@@ -1,8 +1,8 @@
 Changelog
 ~~~~~~~~~
 
-0.31.0 (unreleased)
--------------------
+0.31.0 (November 2022)
+----------------------
 
 * Updated pytket version requirement to 1.9.
 * Change default optimization level in
