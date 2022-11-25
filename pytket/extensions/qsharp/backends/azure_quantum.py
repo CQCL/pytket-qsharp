@@ -153,7 +153,7 @@ class AzureBackend(_QsharpBaseBackend):
                     f" not available at resource {config.resourceId}."
                 )
 
-    def default_compilation_pass(self, optimisation_level: int = 1) -> BasePass:
+    def default_compilation_pass(self, optimisation_level: int = 2) -> BasePass:
         comp_pass = super().default_compilation_pass(optimisation_level)
         if optimisation_level == 0:
             return comp_pass
