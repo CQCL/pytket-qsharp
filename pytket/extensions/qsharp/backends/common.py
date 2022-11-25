@@ -131,7 +131,7 @@ class _QsharpBaseBackend(Backend):
             _TK1_to_RzRx,
         )  # tk1_replacement
 
-    def default_compilation_pass(self, optimisation_level: int = 1) -> BasePass:
+    def default_compilation_pass(self, optimisation_level: int = 2) -> BasePass:
         assert optimisation_level in range(3)
         if optimisation_level == 0:
 

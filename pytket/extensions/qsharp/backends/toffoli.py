@@ -45,7 +45,7 @@ def toffoli_from_tk1(a: float, b: float, c: float) -> Circuit:
 class QsharpToffoliSimulatorBackend(_QsharpSimBaseBackend):
     """Backend for simulating a Toffoli circuit using the QDK."""
 
-    def default_compilation_pass(self, optimisation_level: int = 1) -> BasePass:
+    def default_compilation_pass(self, optimisation_level: int = 2) -> BasePass:
         assert optimisation_level in range(3)
         return RebaseCustom(
             {OpType.CX, OpType.CCX, OpType.CnX, OpType.SWAP, OpType.X},
