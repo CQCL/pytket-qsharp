@@ -44,7 +44,7 @@ setup(
     packages=find_namespace_packages(include=["pytket.*"]),
     include_package_data=True,
     install_requires=[
-        "pytket ~= 1.9",
+        "pytket == 1.11.0rc0",
         "qsharp ~= 0.27.236950",
         "qsharp-core ~= 0.27.236950",
     ],
