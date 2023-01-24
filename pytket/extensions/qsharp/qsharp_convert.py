@@ -116,10 +116,10 @@ def operation_body(c: Circuit, sim: bool = True) -> List[str]:
     if sim:
         lines.append("        ResetAll(q);")
     if n_c > 0:
-        rt= "["
-        for cb in range(n_c-1): 
-            rt = rt + "r{}".format(cb) +", "
-        rt = rt + "r{}".format(n_c-1) + "]"
+        rt = "["
+        for cb in range(n_c - 1):
+            rt = rt + "r{}".format(cb) + ", "
+        rt = rt + "r{}".format(n_c - 1) + "]"
         lines.append("        return {};".format(rt))
     else:
         lines.append("        return new Result[0];")
