@@ -108,7 +108,7 @@ def operation_body(c: Circuit, sim: bool = True) -> List[str]:
     all_bits = list(range(n_c))
     if meas_bits != all_bits:
         extra_meas_lines = [
-            "        set r{} = Zero;".format(cb)
+            "        let r{} = Zero;".format(cb)
             for cb in all_bits
             if cb not in meas_bits
         ]
