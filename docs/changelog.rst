@@ -1,6 +1,11 @@
 Changelog
 ~~~~~~~~~
 
+0.33.0 (February 2023)
+----------------------
+
+* solving issue on Rigetti devices and simulator
+
 0.32.0 (January 2023)
 ---------------------
 
