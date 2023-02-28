@@ -86,7 +86,7 @@ def main_body(c: Circuit) -> Tuple[List[str], List[int]]:
         if cmd.op.type == OpType.Measure:
             cb = cmd.bits[0].index[0]
             measured_bits.append(cb)
-            lines.append("        set r w/= {} <- M(q[{}]);".format(cb, qbs[0]))
+            lines.append("        let r{} = M(q[{}]);".format(cb, qbs[0]))
         else:
             lines.append("        " + cmd_body(cmd.op, qbs) + ";")
 
@@ -97,10 +97,6 @@ def operation_body(c: Circuit, sim: bool = True) -> List[str]:
     lines = []
     n_q = c.n_qubits
     n_c = len(c.bits)
-    if n_c > 0:
-        lines.append("    mutable r = [" + ", ".join(["Zero"] * n_c) + "];")
-    else:
-        lines.append("    mutable r = new Result[0];")
 
     lines.append("    use q = Qubit[{}] {{".format(n_q))
     # devices don't support reset yet
@@ -112,14 +108,21 @@ def operation_body(c: Circuit, sim: bool = True) -> List[str]:
     all_bits = list(range(n_c))
     if meas_bits != all_bits:
         extra_meas_lines = [
-            "        set r w/= {} <- Zero;".format(cb)
+            "        let r{} = Zero;".format(cb)
             for cb in all_bits
             if cb not in meas_bits
         ]
         lines.extend(extra_meas_lines)
     if sim:
         lines.append("        ResetAll(q);")
-    lines.append("        return r;")
+    if n_c > 0:
+        rt = "["
+        for cb in range(n_c - 1):
+            rt = rt + "r{}".format(cb) + ", "
+        rt = rt + "r{}".format(n_c - 1) + "]"
+        lines.append("        return {};".format(rt))
+    else:
+        lines.append("        return new Result[0];")
     lines.append("    }")
     return lines
 
