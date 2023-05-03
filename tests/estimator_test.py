@@ -65,6 +65,6 @@ def test_handles() -> None:
     c = Circuit(3)
     c.CCX(0, 1, 2)
     c = b.get_compiled_circuit(c, 0)
-    # handle = b.process_circuits([c])[0]
+    handle = b.process_circuits([c])[0]
     # resources = b.get_resources(handle)
     # assert resources["T"] >= 7
