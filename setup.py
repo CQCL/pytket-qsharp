@@ -47,6 +47,7 @@ setup(
         "pytket ~= 1.14",
         "qsharp ~= 0.28.263081",
         "qsharp-core ~= 0.28.263081",
+        "markdown",
     ],
     classifiers=[
         "Environment :: Console",
