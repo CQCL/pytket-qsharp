@@ -11,11 +11,6 @@ API documentation
     :inherited-members:
     :members:
 
-.. autoclass:: pytket.extensions.qsharp.QsharpEstimatorBackend
-    :special-members: __init__
-    :inherited-members:
-    :members:
-
 .. autoclass:: pytket.extensions.qsharp.AzureBackend
     :special-members: __init__
     :inherited-members:

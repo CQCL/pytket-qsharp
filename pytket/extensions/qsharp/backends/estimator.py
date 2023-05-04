@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 ResourcesResult = Dict[str, int]
 
 
-class QsharpEstimatorBackend(_QsharpBaseBackend):
+class _QsharpEstimatorBackend(_QsharpBaseBackend):
     """Backend for estimating resources of a circuit using the QDK."""
 
     def _calculate_results(
