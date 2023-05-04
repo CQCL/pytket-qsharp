@@ -16,6 +16,6 @@
 """
 
 from .simulator import QsharpSimulatorBackend
-from .estimator import QsharpEstimatorBackend
+from .estimator import _QsharpEstimatorBackend
 from .toffoli import QsharpToffoliSimulatorBackend
 from .azure_quantum import AzureBackend

@@ -19,7 +19,6 @@
 from ._metadata import __extension_version__, __extension_name__  # type: ignore
 from .backends import (
     QsharpSimulatorBackend,
-    QsharpEstimatorBackend,
     QsharpToffoliSimulatorBackend,
     AzureBackend,
 )
