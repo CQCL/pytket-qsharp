@@ -17,11 +17,14 @@ from pytket.pauli import Pauli  # type: ignore
 
 # from pytket.extensions.qsharp import QsharpEstimatorBackend
 
+# tests disabled because of https://github.com/CQCL/pytket-qsharp/issues/41
+
 
 def test_estimates() -> None:
     """
     Check that the resource estimator gives reasonable results.
     """
+    # tests disabled because of https://github.com/CQCL/pytket-qsharp/issues/41
     # b = _QsharpEstimatorBackend()
     c = Circuit(3)
     c.H(0)
@@ -53,6 +56,7 @@ def test_ccx_resources() -> None:
     """
     Resources of a CCX.
     """
+    # tests disabled because of https://github.com/CQCL/pytket-qsharp/issues/41
     # b = QsharpEstimatorBackend()
     c = Circuit(3)
     c.CCX(0, 1, 2)
@@ -62,6 +66,7 @@ def test_ccx_resources() -> None:
 
 
 def test_handles() -> None:
+    # tests disabled because of https://github.com/CQCL/pytket-qsharp/issues/41
     # b = QsharpEstimatorBackend()
     c = Circuit(3)
     c.CCX(0, 1, 2)

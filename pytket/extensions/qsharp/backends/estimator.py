@@ -27,7 +27,10 @@ ResourcesResult = Dict[str, int]
 
 
 class _QsharpEstimatorBackend(_QsharpBaseBackend):
-    """Backend for estimating resources of a circuit using the QDK."""
+    """
+    disabled because of https://github.com/CQCL/pytket-qsharp/issues/41
+
+    Backend for estimating resources of a circuit using the QDK."""
 
     def _calculate_results(
         self, qscall: "QSharpCallable", n_shots: Optional[int] = None
