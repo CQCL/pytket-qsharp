@@ -32,7 +32,7 @@ the QDK;
 * `QsharpToffoliSimulatorBackend`, for simulating a Toffoli circuit using the
 QDK;
 
-* `QsharpEstimatorBackend`, for estimating various quantum resources of a
+* [disabled] `QsharpEstimatorBackend`, for estimating various quantum resources of a
 circuit using the QDK. This provides a `get_resources` method, which returns a
 dictionary.
 

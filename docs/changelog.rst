@@ -1,6 +1,13 @@
 Changelog
 ~~~~~~~~~
 
+0.34.0 (June 2023)
+------------------
+
+* Updated pytket version requirement to 1.16.
+* Updated qsharp version requirement to 0.28.
+* Disabled QsharpEstimatorBackend, see https://github.com/CQCL/pytket-qsharp/issues/41
+
 0.33.0 (February 2023)
 ----------------------
 

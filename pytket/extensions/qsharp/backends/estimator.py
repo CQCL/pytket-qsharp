@@ -26,8 +26,11 @@ if TYPE_CHECKING:
 ResourcesResult = Dict[str, int]
 
 
-class QsharpEstimatorBackend(_QsharpBaseBackend):
-    """Backend for estimating resources of a circuit using the QDK."""
+class _QsharpEstimatorBackend(_QsharpBaseBackend):
+    """
+    disabled because of https://github.com/CQCL/pytket-qsharp/issues/41
+
+    Backend for estimating resources of a circuit using the QDK."""
 
     def _calculate_results(
         self, qscall: "QSharpCallable", n_shots: Optional[int] = None
