@@ -32,7 +32,7 @@ def toffoli_from_tk1(a: float, b: float, c: float) -> Circuit:
         pass
     elif approx_0_mod_2(b + 1) and approx_0_mod_2(a - c):
         # X
-        circ.X()
+        circ.X(0)
     else:
         raise RuntimeError(
             "Cannot compile to Toffoli gate set: TK1({}, {}, {}) ∉ {{I, X}}".format(
