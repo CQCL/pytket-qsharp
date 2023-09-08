@@ -17,8 +17,8 @@
 
 from typing import List, Tuple
 from math import pi
-from pytket.circuit import Circuit, OpType, Op  # type: ignore
-from pytket.pauli import Pauli  # type: ignore
+from pytket.circuit import Circuit, OpType, Op
+from pytket.pauli import Pauli
 
 qs_pauli = {Pauli.I: "PauliI", Pauli.X: "PauliX", Pauli.Y: "PauliY", Pauli.Z: "PauliZ"}
 
@@ -31,8 +31,8 @@ def cmd_body(op: Op, qbs: List[int]) -> str:
     elif optype == OpType.CX:
         return "CNOT(q[{}], q[{}])".format(*qbs)
     elif optype == OpType.PauliExpBox:
-        paulis = op.get_paulis()
-        theta = (-2 / pi) * op.get_phase()
+        paulis = op.get_paulis()  # type: ignore
+        theta = (-2 / pi) * op.get_phase()  # type: ignore
         return "Exp([{}], {}, [{}])".format(
             ", ".join([qs_pauli[p] for p in paulis]),
             theta,

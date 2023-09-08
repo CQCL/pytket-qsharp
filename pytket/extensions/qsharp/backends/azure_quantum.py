@@ -20,15 +20,15 @@ from typing import TYPE_CHECKING, Dict, List, Optional, Sequence, Union, cast
 
 import qsharp  # type: ignore
 import qsharp.azure  # type: ignore
-from qsharp import compile as qscompile  # type: ignore
+from qsharp import compile as qscompile
 
 from pytket.config import get_config_file_path
 from pytket.backends.backend import Backend, BackendResult, CircuitStatus, KwargTypes
 from pytket.backends.backend_exceptions import CircuitNotRunError
 from pytket.backends.resulthandle import ResultHandle, _ResultIdTuple
 from pytket.backends.status import StatusEnum
-from pytket.circuit import Circuit  # type: ignore
-from pytket.passes import BasePass, SequencePass, SimplifyInitial  # type: ignore
+from pytket.circuit import Circuit
+from pytket.passes import BasePass, SequencePass, SimplifyInitial
 from pytket.utils import prepare_circuit
 from pytket.utils.outcomearray import OutcomeArray
 
@@ -112,13 +112,13 @@ class AzureBackend(_QsharpBaseBackend):
                     "Try reinstalling a compatible version of pytket."
                 ) from e
             if resourceId:
-                config.resourceId = resourceId
+                config.resourceId = resourceId  # type: ignore
             if location:
-                config.location = location
+                config.location = location  # type: ignore
             if storage:
-                config.storage = storage
+                config.storage = storage  # type: ignore
             # check required parameters
-            if any(val is None for val in (config.resourceId, config.location)):
+            if any(val is None for val in (config.resourceId, config.location)):  # type: ignore
                 raise ValueError(
                     "Azure Quantum resourceId and location must be provided as"
                     f" parameter or stored in the config file {get_config_file_path()}"
@@ -137,8 +137,8 @@ class AzureBackend(_QsharpBaseBackend):
                     )
                 elif e.error_name == "WorkspaceNotFound":
                     raise RuntimeError(
-                        "No suitable Azure Quantum workspace found"
-                        f" check the resourceId is correct: {config.resourceId}"
+                        "No suitable Azure Quantum workspace found. "
+                        f"Check the resourceId is correct: {config.resourceId}"  # type: ignore
                     )
                 else:
                     raise e
@@ -149,8 +149,8 @@ class AzureBackend(_QsharpBaseBackend):
                 qsharp.azure.target(self.target.id)
             except StopIteration:
                 raise ValueError(
-                    f"Target with id {target_name}"
-                    f" not available at resource {config.resourceId}."
+                    f"Target with id {target_name} "
+                    f"not available at resource {config.resourceId}."  # type: ignore
                 )
 
     def default_compilation_pass(self, optimisation_level: int = 2) -> BasePass:

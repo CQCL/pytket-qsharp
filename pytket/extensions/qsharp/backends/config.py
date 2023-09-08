@@ -47,9 +47,9 @@ def set_azure_config(
     for your Azure Quantum Workspace. Can be overridden in backend construction."""
     config = QSharpConfig.from_default_config_file()
     if resourceId is not None:
-        config.resourceId = resourceId
+        config.resourceId = resourceId  # type: ignore
     if location is not None:
-        config.location = location
+        config.location = location  # type: ignore
     if storage is not None:
-        config.storage = storage
+        config.storage = storage  # type: ignore
     config.update_default_config_file()

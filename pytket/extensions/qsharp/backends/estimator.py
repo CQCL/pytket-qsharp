@@ -15,7 +15,7 @@
 from typing import TYPE_CHECKING, Optional, Union, Dict
 
 from pytket.backends import ResultHandle, StatusEnum
-from pytket.circuit import Circuit  # type: ignore
+from pytket.circuit import Circuit
 
 from .common import _QsharpBaseBackend, BackendResult
 

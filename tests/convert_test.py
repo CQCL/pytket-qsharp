@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from sympy import Symbol  # type: ignore
+from sympy import Symbol
 
 import pytest
 
-from pytket.circuit import Circuit, PauliExpBox, fresh_symbol  # type: ignore
-from pytket.pauli import Pauli  # type: ignore
+from pytket.circuit import Circuit, PauliExpBox, fresh_symbol
+from pytket.pauli import Pauli
 from pytket.extensions.qsharp import tk_to_qsharp
 
 
