@@ -35,8 +35,8 @@ from pytket.backends.backend import KwargTypes
 from pytket.backends.resulthandle import _ResultIdTuple
 from pytket.backends.backendinfo import BackendInfo
 from pytket.backends.backendresult import BackendResult
-from pytket.circuit import Circuit, OpType  # type: ignore
-from pytket.passes import (  # type: ignore
+from pytket.circuit import Circuit, OpType
+from pytket.passes import (
     BasePass,
     RebaseCustom,
     SequencePass,
@@ -45,8 +45,8 @@ from pytket.passes import (  # type: ignore
     FullPeepholeOptimise,
     FlattenRegisters,
 )
-from pytket._tket.circuit._library import _TK1_to_RzRx  # type: ignore
-from pytket.predicates import (  # type: ignore
+from pytket.circuit_library import _TK1_to_RzRx
+from pytket.predicates import (
     GateSetPredicate,
     NoClassicalControlPredicate,
     NoFastFeedforwardPredicate,
@@ -54,7 +54,7 @@ from pytket.predicates import (  # type: ignore
     NoMidMeasurePredicate,
     NoSymbolsPredicate,
 )
-from pytket.architecture import Architecture  # type: ignore
+from pytket.architecture import Architecture
 from pytket.extensions.qsharp._metadata import __extension_version__
 from pytket.extensions.qsharp.qsharp_convert import tk_to_qsharp
 

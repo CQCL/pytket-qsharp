@@ -34,7 +34,7 @@ class QsharpSimulatorBackend(_QsharpSimBaseBackend):
             shots_ar = np.array(
                 [qscall.simulate() for _ in range(n_shots)], dtype=np.uint8
             )
-            shots = OutcomeArray.from_readouts(shots_ar)  # type: ignore
+            shots = OutcomeArray.from_readouts(shots_ar)
             # ^ type ignore as array is ok for Sequence[Sequence[int]]
             # outputs should correspond to default register,
             # as mapped by FlattenRegisters()
