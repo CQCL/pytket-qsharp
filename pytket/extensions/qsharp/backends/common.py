@@ -45,7 +45,7 @@ from pytket.passes import (  # type: ignore
     FullPeepholeOptimise,
     FlattenRegisters,
 )
-from pytket._tket.circuit._library import _TK1_to_RzRx  # type: ignore
+from pytket.circuit_library import _TK1_to_RzRx  # type: ignore
 from pytket.predicates import (  # type: ignore
     GateSetPredicate,
     NoClassicalControlPredicate,
