@@ -17,7 +17,7 @@ from collections import Counter
 import os
 from typing import cast
 from pytket.backends.status import StatusEnum
-from pytket.circuit import Circuit, OpType  # type: ignore
+from pytket.circuit import Circuit, OpType
 from pytket.extensions.qsharp import AzureBackend
 
 skip_remote_tests: bool = os.getenv("PYTKET_RUN_REMOTE_TESTS") is None

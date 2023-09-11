@@ -14,8 +14,8 @@
 
 from typing import TYPE_CHECKING, MutableMapping, Optional, Union
 import numpy as np
-from pytket.circuit import Circuit, OpType  # type: ignore
-from pytket.passes import BasePass, RebaseCustom  # type: ignore
+from pytket.circuit import Circuit, OpType
+from pytket.passes import BasePass, RebaseCustom
 from pytket.utils.outcomearray import OutcomeArray
 from pytket.passes._decompositions import approx_0_mod_2
 from .common import _QsharpSimBaseBackend, BackendResult
@@ -32,7 +32,7 @@ def toffoli_from_tk1(a: float, b: float, c: float) -> Circuit:
         pass
     elif approx_0_mod_2(b + 1) and approx_0_mod_2(a - c):
         # X
-        circ.X()
+        circ.X(0)
     else:
         raise RuntimeError(
             "Cannot compile to Toffoli gate set: TK1({}, {}, {}) ∉ {{I, X}}".format(
@@ -50,7 +50,7 @@ class QsharpToffoliSimulatorBackend(_QsharpSimBaseBackend):
         return RebaseCustom(
             {OpType.CX, OpType.CCX, OpType.CnX, OpType.SWAP, OpType.X},
             Circuit(),  # cx_replacement (irrelevant)
-            toffoli_from_tk1,
+            toffoli_from_tk1,  # type: ignore
         )  # tk1_replacement
 
     def _calculate_results(
@@ -60,7 +60,7 @@ class QsharpToffoliSimulatorBackend(_QsharpSimBaseBackend):
             shots_ar = np.array(
                 [qscall.toffoli_simulate() for _ in range(n_shots)], dtype=np.uint8
             )
-            shots = OutcomeArray.from_readouts(shots_ar)  # type: ignore
+            shots = OutcomeArray.from_readouts(shots_ar)
             # ^ type ignore as array is ok for Sequence[Sequence[int]]
             # outputs should correspond to default register,
             # as mapped by FlattenRegisters()

@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from pytket.circuit import Circuit, PauliExpBox  # type: ignore
-from pytket.pauli import Pauli  # type: ignore
+from pytket.circuit import Circuit, PauliExpBox
+from pytket.pauli import Pauli
 
 # from pytket.extensions.qsharp import QsharpEstimatorBackend
 
