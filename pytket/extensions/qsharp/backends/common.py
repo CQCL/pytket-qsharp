@@ -64,10 +64,7 @@ if TYPE_CHECKING:
 
 def qs_predicates(gate_set: Set[OpType]) -> List[Predicate]:
     return [
-        NoMidMeasurePredicate(),
         NoSymbolsPredicate(),
-        NoClassicalControlPredicate(),
-        NoFastFeedforwardPredicate(),
         GateSetPredicate(gate_set),
     ]
 
