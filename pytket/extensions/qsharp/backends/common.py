@@ -48,10 +48,7 @@ from pytket.passes import (
 from pytket.circuit_library import _TK1_to_RzRx
 from pytket.predicates import (
     GateSetPredicate,
-    NoClassicalControlPredicate,
-    NoFastFeedforwardPredicate,
     Predicate,
-    NoMidMeasurePredicate,
     NoSymbolsPredicate,
 )
 from pytket.architecture import Architecture
@@ -64,10 +61,7 @@ if TYPE_CHECKING:
 
 def qs_predicates(gate_set: Set[OpType]) -> List[Predicate]:
     return [
-        NoMidMeasurePredicate(),
         NoSymbolsPredicate(),
-        NoClassicalControlPredicate(),
-        NoFastFeedforwardPredicate(),
         GateSetPredicate(gate_set),
     ]
 

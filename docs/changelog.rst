@@ -1,6 +1,12 @@
 Changelog
 ~~~~~~~~~
 
+Unreleased
+----------
+
+* Remove constraints on mid-circuit measurement and classical control.
+* Update pytket version requirement to 1.20.
+
 0.35.0 (September 2023)
 -----------------------
 
