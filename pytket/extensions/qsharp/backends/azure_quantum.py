@@ -112,13 +112,13 @@ class AzureBackend(_QsharpBaseBackend):
                     "Try reinstalling a compatible version of pytket."
                 ) from e
             if resourceId:
-                config.resourceId = resourceId  # type: ignore
+                config.resourceId = resourceId
             if location:
-                config.location = location  # type: ignore
+                config.location = location
             if storage:
-                config.storage = storage  # type: ignore
+                config.storage = storage
             # check required parameters
-            if any(val is None for val in (config.resourceId, config.location)):  # type: ignore
+            if any(val is None for val in (config.resourceId, config.location)):
                 raise ValueError(
                     "Azure Quantum resourceId and location must be provided as"
                     f" parameter or stored in the config file {get_config_file_path()}"
@@ -138,7 +138,7 @@ class AzureBackend(_QsharpBaseBackend):
                 elif e.error_name == "WorkspaceNotFound":
                     raise RuntimeError(
                         "No suitable Azure Quantum workspace found. "
-                        f"Check the resourceId is correct: {config.resourceId}"  # type: ignore
+                        f"Check the resourceId is correct: {config.resourceId}"
                     )
                 else:
                     raise e
@@ -150,7 +150,7 @@ class AzureBackend(_QsharpBaseBackend):
             except StopIteration:
                 raise ValueError(
                     f"Target with id {target_name} "
-                    f"not available at resource {config.resourceId}."  # type: ignore
+                    f"not available at resource {config.resourceId}."
                 )
 
     def default_compilation_pass(self, optimisation_level: int = 2) -> BasePass:
