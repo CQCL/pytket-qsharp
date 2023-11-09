@@ -45,7 +45,7 @@ from pytket.passes import (
     FullPeepholeOptimise,
     FlattenRegisters,
 )
-from pytket.circuit_library import _TK1_to_RzRx
+from pytket.circuit_library import TK1_to_RzRx
 from pytket.predicates import (
     GateSetPredicate,
     Predicate,
@@ -122,7 +122,7 @@ class _QsharpBaseBackend(Backend):
                 OpType.Z,
             },
             Circuit(),  # cx_replacement (irrelevant)
-            _TK1_to_RzRx,
+            TK1_to_RzRx,
         )  # tk1_replacement
 
     def default_compilation_pass(self, optimisation_level: int = 2) -> BasePass:
