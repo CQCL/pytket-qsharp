@@ -1,6 +1,11 @@
 Changelog
 ~~~~~~~~~
 
+0.36.1 (November 2023)
+----------------------
+
+* Replace uses of "private" (underscored) pytket symbols.
+
 0.36.0 (October 2023)
 ---------------------
 
