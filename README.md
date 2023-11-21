@@ -1,7 +1,7 @@
 # pytket-qsharp
 
 [Pytket](https://cqcl.github.io/tket/pytket/api/index.html) is a python module for interfacing
-with tket, a quantum computing toolkit and optimisation compiler developed by Quantinuum.
+with tket, a quantum computing toolkit and optimising compiler developed by Quantinuum.
 
 [Azure Quantum](https://azure.microsoft.com/en-gb/services/quantum/) is a portal for accessing
 quantum computers via Microsoft Azure.
