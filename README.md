@@ -1,12 +1,7 @@
-# Pytket Extensions
-
-This repository contains the pytket-qsharp extension, using Quantinuum's
-[pytket](https://cqcl.github.io/tket/pytket/api/index.html) quantum SDK.
-
 # pytket-qsharp
 
-[Pytket](https://cqcl.github.io/tket/pytket/api/index.html) is a python module for interfacing
-with tket, a quantum computing toolkit and optimisation compiler developed by Quantinuum.
+[Pytket](https://tket.quantinuum.com/api-docs/index.html) is a python module for interfacing
+with tket, a quantum computing toolkit and optimising compiler developed by Quantinuum.
 
 [Azure Quantum](https://azure.microsoft.com/en-gb/services/quantum/) is a portal for accessing
 quantum computers via Microsoft Azure.
@@ -21,7 +16,7 @@ as well as local simulators and resource estimators from the Microsoft QDK.
 ## Backends provided in this module
 
 This module provides four
-[backends](https://cqcl.github.io/tket/pytket/api/backends.html), all deriving
+[backends](https://tket.quantinuum.com/api-docs/backends.html), all deriving
 from the `pytket` `Backend` class:
 
 * `AzureBackend`, for executing pytket circuits on targets the user has access to on Azure Quantum;
