@@ -23,7 +23,7 @@ jobs:
     - name: Install pytket qsharp
       run: pip install .
     - name: Install dotnet SDK
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '6.0.x'
     - name: Install iqsharp
