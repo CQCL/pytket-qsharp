@@ -32,7 +32,7 @@ setup(
     author_email="tket-support@cambridgequantum.com",
     python_requires=">=3.9",
     project_urls={
-        "Documentation": "https://tket.quantinuum.com/extensions/pytket-qsharp/api/index.html",
+        "Documentation": "https://tket.quantinuum.com/extensions/pytket-qsharp/index.html",
         "Source": "https://github.com/CQCL/pytket-qsharp",
         "Tracker": "https://github.com/CQCL/pytket-qsharp/issues",
     },
