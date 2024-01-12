@@ -1,6 +1,11 @@
 Changelog
 ~~~~~~~~~
 
+unreleased
+----------
+
+* Updated qsharp version requirement to 1.0.33.
+
 0.38.0 (January 2024)
 ---------------------
 
