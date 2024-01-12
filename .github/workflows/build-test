@@ -36,11 +36,6 @@ python -m pip install --upgrade pip wheel build
 
 python -m pip install jupyterlab
 
-if [[ "${PLAT}" != "Darwin" ]]
-then
-    dotnet iqsharp install --user
-fi
-
 # Generate and install the package
 python -m build
 for w in dist/*.whl ; do

@@ -40,40 +40,6 @@ jobs:
         fetch-depth: '0'
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* +refs/heads/*:refs/remotes/origin/*
 
-    - name: Install dotnet SDK - ubuntu
-      if: ${{ matrix.os == 'ubuntu-22.04' }}
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '6.0.x'
-    - name: Install iqsharp  - ubuntu
-      if: ${{ matrix.os == 'ubuntu-22.04' }}
-      run: |
-        dotnet tool install -g Microsoft.Quantum.IQSharp
-        dotnet iqsharp install --user
-
-    - name: Install dotnet SDK - mac os
-      if: ${{ matrix.os == 'macos-12' }}
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '6.0.x'
-    - name: Install iqsharp - mac os
-      if: ${{ matrix.os == 'macos-12' }}
-      run: |
-        brew install mono-libgdiplus jupyter
-        dotnet tool install -g Microsoft.Quantum.IQSharp
-        dotnet iqsharp install
-
-    - name: Install dotnet SDK  - windows
-      if: ${{ matrix.os == 'windows-2022' }}
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '6.0.x'
-    - name: Install iqsharp - windows
-      if: ${{ matrix.os == 'windows-2022' }}
-      run: |
-        dotnet tool install -g Microsoft.Quantum.IQSharp
-        dotnet iqsharp install --user
-
     - name: Set up Python 3.9
       if: github.event_name == 'push' || github.event_name == 'schedule'
       uses: actions/setup-python@v5

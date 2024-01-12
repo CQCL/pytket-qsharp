@@ -5,6 +5,7 @@ unreleased
 ----------
 
 * Updated qsharp version requirement to 1.0.33
+* remove dotnet dependency
 
 0.38.0 (January 2024)
 ---------------------

@@ -22,14 +22,6 @@ jobs:
       run: pip install --upgrade pip wheel jupyterlab
     - name: Install pytket qsharp
       run: pip install .
-    - name: Install dotnet SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '6.0.x'
-    - name: Install iqsharp
-      run: |
-        dotnet tool install -g Microsoft.Quantum.IQSharp
-        dotnet iqsharp install --user
     - name: Install docs dependencies
       run: |
         pip install -r .github/workflows/docs/requirements.txt

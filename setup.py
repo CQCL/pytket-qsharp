@@ -45,7 +45,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "pytket ~= 1.23",
-        "qsharp ~= 1.0.31",
+        "qsharp ~= 1.0.33",
         "markdown",
     ],
     classifiers=[
