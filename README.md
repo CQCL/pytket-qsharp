@@ -33,7 +33,7 @@ dictionary.
 
 ## Getting started
 
-`pytket-qsharp` is available for Python 3.9, 3.10 and 3.11, on Linux, MacOS
+`pytket-qsharp` is available for Python 3.10, 3.11 and 3.12, on Linux, MacOS
 and Windows. To install, run:
 
 ```shell
