@@ -45,7 +45,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "pytket ~= 1.24",
-        "qsharp ~= 0.28.291394",
+        "qsharp >= 0.28.291394,< 1.3.0",
         "qsharp-core ~= 0.28.291394",
         "markdown",
     ],
