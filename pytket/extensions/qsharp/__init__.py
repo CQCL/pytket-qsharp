@@ -24,3 +24,6 @@ from .backends import (
 )
 from .backends.config import set_azure_config, QSharpConfig
 from .qsharp_convert import tk_to_qsharp
+
+
+raise NotImplementedError("This extension is depricated")
