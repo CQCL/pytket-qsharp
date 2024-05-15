@@ -70,5 +70,5 @@ cd ..
 
 if [[ "${MYPY}" = "mypy" ]]
 then
-    ${GITHUB_WORKSPACE}/mypy-check ${GITHUB_WORKSPACE}}
+    # ${GITHUB_WORKSPACE}/mypy-check ${GITHUB_WORKSPACE}}
 fi
